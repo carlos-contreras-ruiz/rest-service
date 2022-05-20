@@ -9,11 +9,11 @@ const UsuarioSchema = Schema({
     },
     password: {
         type: String,
-        required: [true, 'El corrreo es obligatorio'],
+        required: [true, 'El password es obligatorio'],
         unique: true,
     },
     img: { type: String },
-    rol: {
+    role: {
         type: String,
         required: [true, 'El rol es obligatorio'],
         enum: ['ADMIN_ROLE', 'USER_ROLE'],

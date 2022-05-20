@@ -9,9 +9,9 @@ content-type: application/json
 
 {
     "nombre": "Carlos",
-    "correo":"email",
+    "correo":"email23@email.com",
     "password":"123456",
-    "rol":"ADMIN_ROLE"
+    "role":"ADMIN_ROLE2"
 }
 
 ###
