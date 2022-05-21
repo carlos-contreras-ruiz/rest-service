@@ -1,23 +1,25 @@
-GET http://localhost:8081/api/v1/users
+GET http://localhost:8081/api/v1/users/usuarios?offset=2&limit=1
 
 ###
-DELETE  http://localhost:8081/api/v1/users
+DELETE  http://localhost:8081/api/v1/users/628802a553e681077cd2ab20
 
 ###
 POST  http://localhost:8081/api/v1/users
 content-type: application/json
 
 {
-    "nombre": "Carlos",
-    "correo":"email23@email.com",
+    "nombre": "Francisco3",
+    "correo":"email5@email.com",
     "password":"123456",
-    "role":"ADMIN_ROLE2"
+    "role":"USER_ROLE"
 }
 
 ###
-PUT   http://localhost:8081/api/v1/users/10?apikey=hoooolllaa
+PUT   http://localhost:8081/api/v1/users/6287fdf708431926ab99d839
 content-type: application/json
 
 {
-    "name": "Carlos"
+    "nombre": "Carlos Update2",
+    "google":true,
+    "_id":"6287fdf708431926ab99d839"
 }

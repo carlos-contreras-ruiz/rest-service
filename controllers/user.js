@@ -2,19 +2,28 @@ const { response, request } = require('express')
 const Usuario = require('../models/usuario')
 const bcryptjs = require('bcryptjs')
 
-const getUser = (req, res = response) => {
+const getUsers = async (req = request, res = response) => {
+    const { limit = 3, offset = 0 } = req.query
+    const userP = () => {
+        Usuario.find({
+            estado: true,
+        })
+            .skip(Number(offset))
+            .limit(Number(limit))
+    }
+
+    const totalP = () => Usuario.countDocuments({ estado: true })
+
+    const [usuarios, total] = await Promise.all([userP, totalP])
     res.json({
         msg: 'API get CONTROLLER',
+        total,
+        body: usuarios,
     })
 }
 
 const createUser = async (req = request, res) => {
     const { nombre, correo, password, role } = req.body
-    //verificar si correo existe
-    const emailExist = await Usuario.findOne({ correo })
-    if (emailExist) {
-        return res.status(400).json({ msg: 'correo registrado' })
-    }
 
     //Encriptra contraseña
     const salt = bcryptjs.genSaltSync()
@@ -39,28 +48,37 @@ const createUser = async (req = request, res) => {
     })
 }
 
-const updateUser = (req = request, res) => {
-    const { name } = req.body
-    const idUser = req.params.id
-    const { apikey } = req.query
+const updateUser = async (req = request, res) => {
+    const { _id, password, google, ...user } = req.body
+    if (password) {
+        const salt = bcryptjs.genSaltSync()
+        user.password = bcryptjs.hashSync(password, salt)
+    }
+    const usuario = await Usuario.findByIdAndUpdate(req.params.id, user)
     res.status(201).json({
         msg: 'API post CONTROLLER ',
-        apikey,
         body: {
-            name,
-            idUser,
+            usuario,
         },
     })
 }
 
-const deleteUser = (req, res) => {
+const deleteUser = async (req, res) => {
+    const { id } = req.params
+    //borrar registro fisico
+    //const usuario = await Usuario.findByIdAndDelete(id)
+    //Cambiar el estado a false
+    const usuario = await Usuario.findByIdAndUpdate(id, {
+        estado: false,
+    })
     res.json({
         msg: 'API delet CONTROLLER',
+        body: usuario,
     })
 }
 
 module.exports = {
-    getUser,
+    getUsers,
     createUser,
     deleteUser,
     updateUser,
