@@ -1,7 +1,12 @@
-GET http://localhost:8081/api/v1/users/usuarios?offset=2&limit=1
+GET http://localhost:8081/api/v1/users/usuarios
+
+###
+GET http://localhost:8081/api/v1/users/usuario/62885f4df0b15baf16a6bee4
 
 ###
 DELETE  http://localhost:8081/api/v1/users/628802a553e681077cd2ab20
+#Authorization: x-token xxx
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2Mjg4NTU1NzkwOWFiYWY3N2NlYWEzY2UiLCJpYXQiOjE2NTMzNDgzMDYsImV4cCI6MTY1MzM2MjcwNn0.Ad0D1kkb4rdSqHHFo559PO_B81S20TpK0aszigos0Cg
 
 ###
 POST  http://localhost:8081/api/v1/users
@@ -22,4 +27,13 @@ content-type: application/json
     "nombre": "Carlos Update2",
     "google":true,
     "_id":"6287fdf708431926ab99d839"
+}
+
+###
+POST  http://localhost:8081/api/v1/auth/login
+content-type: application/json
+
+{
+    "correo":"email1@email.com",
+    "password":"123456"
 }

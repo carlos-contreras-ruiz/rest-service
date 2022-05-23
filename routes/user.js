@@ -5,17 +5,34 @@ const router = Router()
 const {
     getUsers,
     createUser,
+    getUser,
     deleteUser,
     updateUser,
 } = require('../controllers/user')
+
 const {
     validateRol,
     validateEmailExists,
     userById,
 } = require('../helpers/db-validators')
-const { validarCamposUsuario } = require('../middlewares/userValidationFields')
 
+const {
+    validarCamposUsuario,
+    validateAdminPermissions,
+    hasRole,
+    validateJWT,
+} = require('../middlewares')
+
+/*const { validarCamposUsuario } = require('../middlewares/userValidationFields')
+const {
+    validateAdminPermissions,
+    hasRole,
+} = require('../middlewares/validateAdminPermissions')
+const { validateJWT } = require('../middlewares/validateJWT')*/
+
+//Routers definition
 router.get('/usuarios', getUsers)
+router.get('/usuario/:id', getUser)
 
 router.post(
     '/',
@@ -36,6 +53,9 @@ router.post(
 router.delete(
     '/:id',
     [
+        validateJWT,
+        //validateAdminPermissions,
+        hasRole('ADMIN_ROLE', 'VENTAS__ROLE'),
         check('id', 'No es un id valido').isMongoId(),
         check('id').custom(userById),
         validarCamposUsuario,

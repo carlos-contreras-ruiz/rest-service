@@ -5,7 +5,7 @@ const bcryptjs = require('bcryptjs')
 const getUsers = async (req = request, res = response) => {
     const { limit = 3, offset = 0 } = req.query
     const userP = () => {
-        Usuario.find({
+        return Usuario.find({
             estado: true,
         })
             .skip(Number(offset))
@@ -14,12 +14,20 @@ const getUsers = async (req = request, res = response) => {
 
     const totalP = () => Usuario.countDocuments({ estado: true })
 
-    const [usuarios, total] = await Promise.all([userP, totalP])
+    const [usuarios, total] = await Promise.all([userP(), totalP()])
     res.json({
         msg: 'API get CONTROLLER',
         total,
         body: usuarios,
     })
+}
+
+const getUser = async (req = request, res = response) => {
+    const user = await Usuario.findById(req.params.id)
+    if (!user) {
+        res.status(404).json({ msg: 'Usuario no encontrado' })
+    }
+    res.status(200).json({ msg: 'user found', body: user })
 }
 
 const createUser = async (req = request, res) => {
@@ -82,4 +90,5 @@ module.exports = {
     createUser,
     deleteUser,
     updateUser,
+    getUser,
 }
