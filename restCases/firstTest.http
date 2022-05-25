@@ -4,9 +4,9 @@ GET http://localhost:8081/api/v1/users/usuarios
 GET http://localhost:8081/api/v1/users/usuario/62885f4df0b15baf16a6bee4
 
 ###
-DELETE  http://localhost:8081/api/v1/users/628802a553e681077cd2ab20
+DELETE  http://localhost:8081/api/v1/users/628802a553e681077cd2ab20t
 #Authorization: x-token xxx
-x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2Mjg4NTU1NzkwOWFiYWY3N2NlYWEzY2UiLCJpYXQiOjE2NTMzNDgzMDYsImV4cCI6MTY1MzM2MjcwNn0.Ad0D1kkb4rdSqHHFo559PO_B81S20TpK0aszigos0Cg
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2Mjg4NTU1NzkwOWFiYWY3N2NlYWEzY2UiLCJpYXQiOjE2NTM1MDYwNTgsImV4cCI6MTY1MzUyMDQ1OH0.36O4UIdvaxL-XtiagF3KZV_0UdsvSrb9mYgZoHxOUDI
 
 ###
 POST  http://localhost:8081/api/v1/users

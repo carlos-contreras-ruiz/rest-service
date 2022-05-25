@@ -1,0 +1,32 @@
+
+POST http://localhost:8081/api/v1/categorias
+content-type: application/json
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2Mjg4NTU1NzkwOWFiYWY3N2NlYWEzY2UiLCJpYXQiOjE2NTM1MDYwNTgsImV4cCI6MTY1MzUyMDQ1OH0.36O4UIdvaxL-XtiagF3KZV_0UdsvSrb9mYgZoHxOUDI
+
+{
+ "nombre":"Galleta"
+}
+
+###
+GET http://localhost:8081/api/v1/categorias/628e829b97962ac275e9f148
+content-type: application/json
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2Mjg4NTU1NzkwOWFiYWY3N2NlYWEzY2UiLCJpYXQiOjE2NTM1MDYwNTgsImV4cCI6MTY1MzUyMDQ1OH0.36O4UIdvaxL-XtiagF3KZV_0UdsvSrb9mYgZoHxOUDI
+
+###
+GET http://localhost:8081/api/v1/categorias
+content-type: application/json
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2Mjg4NTU1NzkwOWFiYWY3N2NlYWEzY2UiLCJpYXQiOjE2NTM1MDYwNTgsImV4cCI6MTY1MzUyMDQ1OH0.36O4UIdvaxL-XtiagF3KZV_0UdsvSrb9mYgZoHxOUDI
+
+###
+PUT http://localhost:8081/api/v1/categorias/628e829b97962ac275e9f148
+content-type: application/json
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2Mjg4NTU1NzkwOWFiYWY3N2NlYWEzY2UiLCJpYXQiOjE2NTM1MDYwNTgsImV4cCI6MTY1MzUyMDQ1OH0.36O4UIdvaxL-XtiagF3KZV_0UdsvSrb9mYgZoHxOUDI
+
+{
+ "nombre":"Cokkie"
+}
+
+###
+DELETE http://localhost:8081/api/v1/categorias/628e829b97962ac275e9f148
+content-type: application/json
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2Mjg4NTU1NzkwOWFiYWY3N2NlYWEzY2UiLCJpYXQiOjE2NTM1MDYwNTgsImV4cCI6MTY1MzUyMDQ1OH0.36O4UIdvaxL-XtiagF3KZV_0UdsvSrb9mYgZoHxOUDI
