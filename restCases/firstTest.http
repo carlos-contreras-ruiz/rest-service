@@ -37,3 +37,11 @@ content-type: application/json
     "correo":"email1@email.com",
     "password":"123456"
 }
+
+###
+POST http://localhost:8081/api/v1/auth/google
+content-type: application/json
+
+{
+    "id_token":"email1@email.com"
+}
