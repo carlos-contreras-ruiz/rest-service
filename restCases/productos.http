@@ -1,0 +1,50 @@
+POST http://localhost:8081/api/v1/productos
+content-type: application/json
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2Mjg4NTU1NzkwOWFiYWY3N2NlYWEzY2UiLCJpYXQiOjE2NTM1ODU0ODQsImV4cCI6MTY1MzU5OTg4NH0.rAHxFhe0A9BAxDD-heeri9G34iXEqCwVyEqgHUlnVzA
+
+{
+ "nombre":"Galleta MAria3",
+ "usuario":"628802a553e681077cd2ab20",
+ "categoria":"628fb66117b65d7e0f4d6971",
+ "descripcion":"Galletas orep"
+}
+
+###
+DELETE http://localhost:8081/api/v1/productos/628fb7eabad758ec72a9e480
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2Mjg4NTU1NzkwOWFiYWY3N2NlYWEzY2UiLCJpYXQiOjE2NTM1ODU0ODQsImV4cCI6MTY1MzU5OTg4NH0.rAHxFhe0A9BAxDD-heeri9G34iXEqCwVyEqgHUlnVzA
+
+###
+GET http://localhost:8081/api/v1/productos/628fb7eabad758ec72a9e480
+content-type: application/json
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2Mjg4NTU1NzkwOWFiYWY3N2NlYWEzY2UiLCJpYXQiOjE2NTM1ODU0ODQsImV4cCI6MTY1MzU5OTg4NH0.rAHxFhe0A9BAxDD-heeri9G34iXEqCwVyEqgHUlnVzA
+
+###
+GET http://localhost:8081/api/v1/productos
+content-type: application/json
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2Mjg4NTU1NzkwOWFiYWY3N2NlYWEzY2UiLCJpYXQiOjE2NTM1ODU0ODQsImV4cCI6MTY1MzU5OTg4NH0.rAHxFhe0A9BAxDD-heeri9G34iXEqCwVyEqgHUlnVzA
+
+###
+PUT http://localhost:8081/api/v1/productos/628fb7eabad758ec72a9e480
+content-type: application/json
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2Mjg4NTU1NzkwOWFiYWY3N2NlYWEzY2UiLCJpYXQiOjE2NTM1ODU0ODQsImV4cCI6MTY1MzU5OTg4NH0.rAHxFhe0A9BAxDD-heeri9G34iXEqCwVyEqgHUlnVzA
+
+{
+ "nombre":"Galleta Maria especial",
+ "precio":100,
+ "usuario":"628802a553e681077cd2ab20",
+ "categoria":"628fb66117b65d7e0f4d6971",
+ "descripcion":"Galletas maria especial",
+ "estado":true
+}
+
+###
+PUT http://localhost:8081/api/v1/productos/628fb7eabad758ec72a9e480
+content-type: application/json
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2Mjg4NTU1NzkwOWFiYWY3N2NlYWEzY2UiLCJpYXQiOjE2NTM1ODU0ODQsImV4cCI6MTY1MzU5OTg4NH0.rAHxFhe0A9BAxDD-heeri9G34iXEqCwVyEqgHUlnVzA
+
+{
+ "precio":100,
+ "usuario":"628802a553e681077cd2ab21",
+ "categoria":"628fb66117b65d7e0f4d6979",
+ "estado":false
+}
