@@ -24,6 +24,7 @@ class Server {
         this.app.use('/api/v1/auth', require('../routes/auth'))
         this.app.use('/api/v1/categorias', require('../routes/category'))
         this.app.use('/api/v1/productos', require('../routes/productos'))
+        this.app.use('/api/v1/buscar', require('../routes/buscar'))
     }
 
     listen() {

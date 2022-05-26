@@ -1,0 +1,10 @@
+GET http://localhost:8081/api/v1/buscar/usuarios/628d6c1fba2a789886ae889a
+
+###
+GET http://localhost:8081/api/v1/buscar/usuarios/@
+
+###
+GET http://localhost:8081/api/v1/buscar/productos/628fb77a886e3decd6d6f494
+
+###
+GET http://localhost:8081/api/v1/buscar/productos/especial
