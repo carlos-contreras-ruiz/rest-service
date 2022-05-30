@@ -4,62 +4,27 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Google SSO</title>
+        <title>Socket CLient</title>
     </head>
     <body>
-        <h1>Google SSO</h1>
-        <div
-            id="g_id_onload"
-            data-client_id="416984765063-robon9ilvba6pu81snkldg0rc6krerh0.apps.googleusercontent.com"
-            data-auto_prompt="false"
-            data-callback="handleCredentialResponse"></div>
+        <h1>Socket CLient</h1>
+        <div class="status">
+            <p>Server status</p>
+            <span id="online">Online</span>
+            <span id="offline">Offline</span>
         </div>
-        <div
-            class="g_id_signin"
-            data-type="standard"
-            data-size="large"
-            data-theme="outline"
-            data-text="sign_in_with"
-            data-shape="rectangular"
-            data-logo_alignment="left"
-        ></div>
 
-        <button id="signout">SIGN out</button>
+        <div>
+            <input type="text" id="txtMesg" />
+        </div>
+        <div>
+            <button id="btnMsg">Mandar</button>
+        </div>
+        <div>
+            <p id="payload"></p>
+        </div>
 
-        <script
-            src="https://accounts.google.com/gsi/client"
-            async
-            defer
-        ></script>
-        <script>
-            function handleCredentialResponse(response) {
-                //Google token: ID_TOKEN
-               const body = {
-                   id_token:response.credential
-               }
-               fetch('http://localhost:8081/api/v1/auth/google',{
-                   method:'POST',
-                   headers:{
-                       'Content-Type':'application/json'
-                   },
-                   body:JSON.stringify(body)
-               })
-               .then(resp=>resp.json())
-               .then(data=>{
-                   console.log(data)
-                   localStorage.setItem('email',data.usuario.correo)
-               })
-               .catch(error=>console.log(error))
-            }
-
-            const button = document.getElementById('signout')
-            button.onclick = ()=>{
-                console.log(google.accounts.id)
-                google.accounts.id.disableAutoSelect()
-                google.accounts.id.revoke(localStorage.getItem('email'),done=>{
-                    localStorage.clear()
-                })
-            }
-          </script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/socket-client.js"></script>
     </body>
 </html>

@@ -10,3 +10,7 @@ GOOGLE_SECRET_ID=
 
 El usuario esta solo en la base de datos admin de mongo, por eso se dbe agregar
 ?authSource=admin para authenticar
+
+## Sockets
+
+npm install socket.io //Servidor
