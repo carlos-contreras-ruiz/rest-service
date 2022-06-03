@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Socket CLient</title>
+    </head>
+    <body>
+        <h1>Socket CLient</h1>
+        <div class="status">
+            <p>Server status</p>
+            <span id="online">Online</span>
+            <span id="offline">Offline</span>
+        </div>
+
+        <div>
+            <input type="text" id="txtMesg" />
+        </div>
+        <div>
+            <button id="btnMsg">Mandar</button>
+        </div>
+        <div>
+            <p id="payload"></p>
+        </div>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/socket-client.js"></script>
+    </body>
+</html>
