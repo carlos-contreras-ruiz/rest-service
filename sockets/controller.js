@@ -12,7 +12,7 @@ const socketController = (socket) => {
     socket.on('siguiente-ticket', (payload, callback) => {
         const siguiente = ticketControl.siguiente()
         //notificar nuevo ticket
-        socket.broadcast.emit('enviar-mensaje', payload)
+        socket.broadcast.emit('numero-tickets', ticketControl.tickets.length)
         callback({ ticket: siguiente })
     })
 
